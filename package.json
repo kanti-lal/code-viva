@@ -6,7 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format:fix": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "lint-staged": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{html,js, jsx}": [
+      "npx prettier --write"
+    ],
+    "*.js": [
+      "npx eslint --fix"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -16,7 +27,9 @@
     "@tanstack/react-query": "^5.34.2",
     "@tanstack/react-query-devtools": "^5.34.2",
     "axios": "^1.6.8",
+    "firebase": "^10.12.0",
     "next": "14.2.3",
+    "next-nprogress-bar": "^2.3.12",
     "react": "^18",
     "react-dom": "^18"
   },

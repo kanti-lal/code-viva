@@ -10,14 +10,25 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import MenuIcon from "@mui/icons-material/Menu"; // Import MenuIcon
-import AdbIcon from "@mui/icons-material/Adb";
+import MenuIcon from "@mui/icons-material/Menu";
 import kantiImg from "@/assets/images/profile.png";
 import { CodeVivaLogo, CodeVivaLogo1 } from "@/components/generic/Icons";
 import Image from "next/image";
+import Link from "next/link";
 
-const pages = ["Projects", "Resource", "Free MOCK"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { name: "Projects", path: "/projects" },
+  { name: "Resource", path: "/resources" },
+  { name: "Free MOCK", path: "/free-mock" },
+  { name: "Blogs", path: "/blogs" },
+];
+
+const settings = [
+  { name: "Profile", path: "/profile" },
+  { name: "Account", path: "/account" },
+  { name: "Dashboard", path: "/dashboard" },
+  { name: "Logout", path: "/logout" },
+];
 
 function MenuBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,7 +53,6 @@ function MenuBar() {
     <AppBar position="static" className="bg-white">
       <Container maxWidth="xl" className="">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -59,8 +69,6 @@ function MenuBar() {
             }}
           >
             <CodeVivaLogo />
-
-            {/* <CodeVivaLogo1 /> */}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,8 +101,12 @@ function MenuBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" color="black">{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" color="black">
+                    <Link href={page.path}>
+                      {page.name}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -105,21 +117,21 @@ function MenuBar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
-                className=" font-jost capitalize"
-              >
-                {page}
-              </Button>
+              <Link key={page.name} href={page.path} passHref>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                  className="font-jost capitalize"
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <Avatar alt="Kanti" src='/src/assets/images/profile.png' /> */}
                 <Image
                   src={kantiImg}
                   width={45}
@@ -146,8 +158,12 @@ function MenuBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">
+                    <Link href={setting.path}>
+                      {setting.name}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -157,4 +173,5 @@ function MenuBar() {
     </AppBar>
   );
 }
+
 export default MenuBar;
