@@ -1,0 +1,48 @@
+/* .form-control {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  
+} */
+
+
+.alert {
+    color: red;
+    font-size: 12px;
+}
+
+.form-label {
+    font-size: 16px; 
+    font-family: 'Jost', sans-serif; 
+
+}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 13px; /* equivalent to text-sm in Tailwind */
+    font-family: 'Jost', sans-serif; /* assuming font-jost is a custom font */
+    font-weight: 500; /* equivalent to font-medium in Tailwind */
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4b5563; /* equivalent to border-grey-800 in Tailwind */
+    color: #4b5563; /* equivalent to text-grey-700 in Tailwind */
+    outline: none;
+    transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #a855f7; /* equivalent to focus:border-secondary-200 in Tailwind */
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.25); /* equivalent to focus:ring-secondary-200 in Tailwind */
+  }
+  
+  .form-control::placeholder {
+    color: #4b5563; /* equivalent to placeholder:text-grey-700 in Tailwind */
+  }
+  

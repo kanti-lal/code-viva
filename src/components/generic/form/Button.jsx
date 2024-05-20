@@ -45,7 +45,7 @@ const Button = ({
       className={`${BUTTON_CLASSES.base} ${disableClass} ${defaultStyle} ${borderClass} ${whiteClass} ${iconClass} ${buttonCenter} ${width} ${className} ${btnLoaderClass}`}
       {...rest}
     >
-      {btnLoader && <SpinnerLoader size="4" white />}
+      {btnLoader && <SpinnerLoader purple size="12" white  className="w-[20px] h-[20px]"/>}
       {icon && icon} {title}
     </button>
   );

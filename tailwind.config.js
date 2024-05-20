@@ -16,6 +16,12 @@ module.exports = {
         jost: ['Jost', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+      },
+      colors: {
+        primary: '#9333ea',
+        success: '#609966',
+        white: '#FFFFFF',
+        error: '#DE634C',
       }
     },
   },

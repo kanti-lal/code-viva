@@ -20,7 +20,8 @@ const pages = [
   { name: "Projects", path: "/projects" },
   { name: "Resource", path: "/resources" },
   { name: "Free MOCK", path: "/free-mock" },
-  { name: "Blogs", path: "/blogs" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact-us" },
 ];
 
 const settings = [
@@ -130,7 +131,13 @@ function MenuBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Link href={'/login'} >
+              <span className="text-primary font-jost">
+
+              Login
+              </span>
+            </Link>
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Image
                   src={kantiImg}
@@ -166,7 +173,7 @@ function MenuBar() {
                   </Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

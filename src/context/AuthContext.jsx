@@ -12,11 +12,14 @@ import {
   signInWithPopup,
   signOut,
   updatePassword,
+  updateProfile
 } from 'firebase/auth';
-import app from '@/utils/firebase.util'
-// import { VITE_API_RESET_PASSWORD_URL } from '../utils/config';
+// import app from '@/utils/firebase.util'
+import { auth } from '@/utils/firebase.util';
+import { NEXT_PUBLIC_RESET_PASSWORD_URL } from '@/utils/config';
 
-const auth = getAuth(app);
+
+
 
 const AuthContext = createContext({
   currentUser: null,
@@ -45,20 +48,27 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // console.log('The user is', currentUser)
+    console.log('The user is', currentUser)
   }, [currentUser]);
 
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
-  function register(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
+  // function register(email, password) {
+  //   return createUserWithEmailAndPassword(auth, email, password);
+  // }
+
+  async function register(email, password, name) {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    await updateProfile(user, { displayName: name });
+    return user;
   }
 
   function forgotPassword(email) {
     return sendPasswordResetEmail(auth, email, {
-      url: VITE_API_RESET_PASSWORD_URL,
+      url: NEXT_PUBLIC_RESET_PASSWORD_URL,
     });
   }
 
@@ -158,8 +168,6 @@ export const AuthContextProvider = ({ children }) => {
       changePassword,
     };
   }, []);
-
-  console.log('value = ', value);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
