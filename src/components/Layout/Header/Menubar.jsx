@@ -20,31 +20,31 @@ const pages = [
   { name: "Contact", path: "/contact-us" },
 ];
 
-const settings = [
-  { name: "Profile", path: "/profile" },
-  { name: "Account", path: "/account" },
-  { name: "Dashboard", path: "/dashboard" },
-  { name: "Logout", path: "/logout" },
-];
+// const settings = [
+//   { name: "Profile", path: "/profile" },
+//   { name: "Account", path: "/account" },
+//   { name: "Dashboard", path: "/dashboard" },
+//   { name: "Logout", path: "/logout" },
+// ];
 
 function MenuBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <AppBar position="static" className="bg-white">
