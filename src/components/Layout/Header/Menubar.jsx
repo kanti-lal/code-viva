@@ -47,7 +47,7 @@ function MenuBar() {
   // };
 
   return (
-    <AppBar position="static" className="bg-white">
+    <AppBar position="static" className=" bg-purple-100">
       <Container maxWidth="xl" className="">
         <Toolbar disableGutters>
           <Typography
@@ -74,6 +74,7 @@ function MenuBar() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
+              className=" text-primary"
               onClick={handleOpenNavMenu}
               color="inherit"
             >
