@@ -1,5 +1,5 @@
-import { useNetwork } from '@/hooks/useNetwork'
 import React from 'react'
+import { useNetwork } from '@/hooks/useNetwork'
 
 
 const NoInternet = ({ children }) => {

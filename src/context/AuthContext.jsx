@@ -5,7 +5,6 @@ import {
   GoogleAuthProvider,
   confirmPasswordReset,
   createUserWithEmailAndPassword,
-  getAuth,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,

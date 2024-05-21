@@ -4,8 +4,8 @@
   "rules": {
     // "quotes": ["error", "single"],
     // "semi": ["error", "never"],
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": 2,
+    // "react/react-in-jsx-scope": "off",
+    // "react/prop-types": 2,
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "import/order": [
       "error",

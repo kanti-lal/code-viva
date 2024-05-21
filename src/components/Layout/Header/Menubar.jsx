@@ -6,15 +6,11 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
-import kantiImg from "@/assets/images/profile.png";
-import { CodeVivaLogo, CodeVivaLogo1 } from "@/components/generic/Icons";
-import Image from "next/image";
 import Link from "next/link";
+import { CodeVivaLogo, CodeVivaLogo1 } from "@/components/generic/Icons";
 
 const pages = [
   { name: "Projects", path: "/projects" },
