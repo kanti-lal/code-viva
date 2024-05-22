@@ -3,7 +3,7 @@ import SpinnerLoader from "../SpinnerLoader";
 
 export const BUTTON_CLASSES = {
   base: "font-jost font-medium text-xs sm:text-sm leading-6 tracking-[1.7px] text-white uppercase px-3 sm:px-5 md:px-6 py-[9px] text-center  focus:shadow-none ease-in-out duration-300",
-  default: "text-white bg-grey-900 hover:bg-secondary-100",
+  default: "text-white bg-primary hover:bg-purple-700" ,
   bordered:
     "!text-grey-900 bg-transparent border border-grey-900 hover:!text-white",
   white:

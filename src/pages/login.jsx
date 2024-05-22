@@ -10,6 +10,7 @@ import Meta from "@/components/generic/Meta";
 import Button from "@/components/generic/form/Button";
 import { CodeVivaLogo, GoogleIcon } from "@/components/generic/Icons";
 import FormTitle from "@/components/generic/form/FormTitle";
+import { queryClient } from "@/utils/queryClient";
 const Login = () => {
   const { login, signInWithGoogle } = useAuth();
   const router = useRouter();
@@ -28,9 +29,12 @@ const Login = () => {
     console.log("values", values);
     setSubmitting(true);
     try {
-      await login(values.email, values.password);
+      const loginRes = await login(values.email, values.password);
+      console.log("user login ", loginRes?.user);
+      localStorage.setItem("user", JSON.stringify(loginRes?.user));
+      queryClient.refetchQueries(["user"]);
       router.push("/");
-      toast.success('Login successfully!')
+      toast.success("Login successfully!");
     } catch (err) {
       if (err instanceof Error) {
         setFieldError("general", err.message);
@@ -46,13 +50,17 @@ const Login = () => {
   };
 
   const onGoogleClickHandle = () => {
-    signInWithGoogle()
+    signInWithGoogle().then(async (res) => {
+      console.log("user googleauthres", res.user);
+      localStorage.setItem("user", JSON.stringify(res.user));
+      localStorage.setItem("accessToken", JSON.stringify(res.user.accessToken));
+      queryClient.refetchQueries(["user"]); 
+    });
   };
 
   return (
     <div className="container  mx-auto">
       <div className="min-h-screen flex items-center justify-center">
-
         <Meta
           title="Login"
           keyword="login, user login, codeviva"
@@ -67,10 +75,10 @@ const Login = () => {
             <FormTitle title="Log In" />
           </div>
           <div className="my-3 text-center flex justify-end font-jost texy-[16px]">
-          Dont have an account?
+            Dont have an account?
             <Link href="/sign-up" className="underline text-primary ">
               {" "}
-            Sign-Up
+              Sign-Up
             </Link>
           </div>
           <Formik
@@ -85,7 +93,7 @@ const Login = () => {
                 </ErrorMessage>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
-                  Email address
+                    Email address
                   </label>
                   <Field
                     type="email"
@@ -100,7 +108,7 @@ const Login = () => {
 
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
-                  Password
+                    Password
                   </label>
                   <Field
                     type="password"
@@ -117,10 +125,9 @@ const Login = () => {
                   type="submit"
                   defaultStyle
                   btnLoader={isSubmitting}
-                  className="bg-primary hover:bg-purple-700"
                   fullWidth
                   title={isSubmitting ? "" : "Log In"}
-                // title={isSubmitting ? "Logging In..." : "Log In"}
+                  // title={isSubmitting ? "Logging In..." : "Log In"}
                 />
               </Form>
             )}
@@ -131,13 +138,12 @@ const Login = () => {
             <div className="flex justify-center mt-2">
               <Button
                 title=""
+                className="bg-transparent hover:bg-transparent"
                 onClick={onGoogleClickHandle}
                 icon={<GoogleIcon />}
               />
             </div>
           </div>
-
-       
         </div>
       </div>
     </div>
