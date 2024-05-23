@@ -1,4 +1,4 @@
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,6 +14,7 @@ import Link from "next/link";
 import { CodeVivaLogo, CodeVivaLogo1 } from "@/components/generic/Icons";
 import useUserInfo from "@/queries/useUser";
 import { isLoggedIn } from "@/helper";
+import { allRoutes } from "@/constants/allRoutes";
 
 const pages = [
   { name: "Projects", path: "/project" },
@@ -31,12 +32,11 @@ const settings = [
   { name: "Logout", path: "" },
 ];
 
-
 function MenuBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [mounted, setMounted] = useState(false);
-  
+
   const router = useRouter();
   useEffect(() => {
     setMounted(true);
@@ -84,7 +84,9 @@ function MenuBar() {
               textDecoration: "none",
             }}
           >
-            <CodeVivaLogo />
+            <Link href={allRoutes.home}>
+              <CodeVivaLogo />
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -150,9 +152,7 @@ function MenuBar() {
                 <div className="text-[14px] md:text-[27px] font-light font-roboto bg-primary h-[34px] w-[34px] md:h-[50px] md:w-[50px]  rounded-full flex justify-center place-items-center">
                   <span className="flex justify-center text-white font-normal">
                     {userInfo?.data && (
-                      <>
-                        {userInfo.data.email[0].toUpperCase()}
-                      </>
+                      <>{userInfo.data.email[0].toUpperCase()}</>
                     )}
                   </span>
                 </div>
@@ -179,12 +179,15 @@ function MenuBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting.name}  onClick={() => {
-                  handleCloseUserMenu();
-                  if (setting.name === "Logout") {
-                    handleLogout();
-                  }
-                }}>
+                <MenuItem
+                  key={setting.name}
+                  onClick={() => {
+                    handleCloseUserMenu();
+                    if (setting.name === "Logout") {
+                      handleLogout();
+                    }
+                  }}
+                >
                   <Typography textAlign="center">
                     <Link href={setting.path}>{setting.name}</Link>
                   </Typography>

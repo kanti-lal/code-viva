@@ -5,6 +5,7 @@ import "@/styles/navbar.css";
 import { ToastContainer } from "react-toastify";
 import { AuthContextProvider } from "@/context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import RootLayout from "@/components/Layout";
 
 export default function App({ Component, pageProps }) {
   const queryClient = new QueryClient();
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }) {
     <>
       <QueryClientProvider client={queryClient}>
         <AuthContextProvider>
-          <Component {...pageProps} />
+          <RootLayout>
+            <Component {...pageProps} />
+          </RootLayout>
           <ToastContainer />
         </AuthContextProvider>
         <ReactQueryDevtools initialIsOpen={false} />

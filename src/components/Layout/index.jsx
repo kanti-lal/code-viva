@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import MenuBar from './Header/Menubar'
 import Footer from './Footer'
 
-const Layout = ({children}) => {
+const RootLayout = ({children}) => {
   return (
     <Fragment>
       <MenuBar />
@@ -12,4 +12,4 @@ const Layout = ({children}) => {
   )
 }
 
-export default Layout
+export default RootLayout
