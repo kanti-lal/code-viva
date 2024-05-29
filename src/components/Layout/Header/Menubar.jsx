@@ -126,9 +126,9 @@ function MenuBar() {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+          {/* <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
             <CodeVivaLogo1 />
-          </Box>
+          </Box> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
