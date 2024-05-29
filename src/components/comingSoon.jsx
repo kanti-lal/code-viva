@@ -7,8 +7,8 @@ const ComingSoon = () => {
         <h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
           Coming Soon
         </h1>
-        <p class="text-white text-lg mb-8">
-          We're working hard to bring you something amazing. Stay tuned!
+        <p class="text-white text-lg px-4 mb-8 text-center">
+          We&apos;re working hard to bring you something amazing. Stay tuned!
         </p>
       </div>
     </div>
