@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const ResetPasssword = () => {
   return (
-    <div>reset-passsword</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default ResetPasssword
+export default ResetPasssword;

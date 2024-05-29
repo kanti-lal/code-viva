@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const Search = () => {
   return (
-    <div>search</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default Search
+export default Search;

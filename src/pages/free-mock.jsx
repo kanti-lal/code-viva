@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const FreeMock = () => {
   return (
-    <div>free-mock</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default FreeMock
+export default FreeMock;

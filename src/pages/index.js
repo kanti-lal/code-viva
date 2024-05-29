@@ -1,8 +1,9 @@
+import ComingSoon from "@/components/comingSoon";
 
 export default function Home() {
   return (
-    <div>
-      coming soon....
+    <div className="h-screen">
+      <ComingSoon />
     </div>
   );
 }

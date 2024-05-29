@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const UnderMaintenancec = () => {
   return (
-    <div>under-maintenancec</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default UnderMaintenancec
+export default UnderMaintenancec;

@@ -275,3 +275,96 @@ export const GoogleIcon = () => {
     </svg>
   );
 };
+
+export const CodeVivaSq = ({ className }) => {
+  return (
+    <svg
+      width="50"
+      height="50"
+      viewBox="0 0 390 225"
+      fill="none"
+    
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M390 112.05H312.694L215.534 0H292.84L390 112.05Z"
+        fill="url(#paint0_linear_6_2)"
+      />
+      <path
+        d="M390 112.05H312.694L215.534 224.144H292.84L390 112.05Z"
+        fill="url(#paint1_linear_6_2)"
+      />
+      <path
+        d="M0 112.05H77.306L174.466 0H97.1596L0 112.05Z"
+        fill="url(#paint2_linear_6_2)"
+      />
+      <path
+        d="M0 112.05H77.306L174.466 224.144H97.1596L0 112.05Z"
+        fill="url(#paint3_linear_6_2)"
+      />
+      <path
+        opacity="0.65"
+        d="M215.534 0L97.1596 224.143H174.466L292.84 0H215.534Z"
+        fill="url(#paint4_linear_6_2)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_6_2"
+          x1="215.526"
+          y1="56.0337"
+          x2="389.989"
+          y2="56.0337"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4C47AE" />
+          <stop offset="1" stop-color="#B57BDB" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_6_2"
+          x1="373.272"
+          y1="88.7728"
+          x2="255.984"
+          y2="220.721"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4C47AE" />
+          <stop offset="1" stop-color="#B57BDB" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_6_2"
+          x1="174.464"
+          y1="56.0337"
+          x2="0"
+          y2="56.0337"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4C47AE" />
+          <stop offset="1" stop-color="#B57BDB" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_6_2"
+          x1="16.7179"
+          y1="88.7728"
+          x2="134.005"
+          y2="220.721"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4C47AE" />
+          <stop offset="1" stop-color="#B57BDB" />
+        </linearGradient>
+        <linearGradient
+          id="paint4_linear_6_2"
+          x1="97.1534"
+          y1="112.067"
+          x2="292.836"
+          y2="112.067"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4C47AE" />
+          <stop offset="1" stop-color="#B57BDB" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};

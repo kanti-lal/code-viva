@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const Resource = () => {
   return (
-    <div>resource</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default Resource
+export default Resource;

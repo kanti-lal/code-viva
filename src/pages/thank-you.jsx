@@ -2,7 +2,7 @@ import React from 'react'
 
 const ThankYou = () => {
   return (
-    <div>thank-you</div>
+    <div className='h-screen'>thank-you</div>
   )
 }
 

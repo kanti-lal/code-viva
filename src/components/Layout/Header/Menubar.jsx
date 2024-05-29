@@ -73,7 +73,7 @@ function MenuBar() {
             variant="h6"
             noWrap
             component="a"
-            href=""
+            href={allRoutes.home}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -84,9 +84,7 @@ function MenuBar() {
               textDecoration: "none",
             }}
           >
-            <Link href={allRoutes.home}>
-              <CodeVivaLogo />
-            </Link>
+            <CodeVivaLogo />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

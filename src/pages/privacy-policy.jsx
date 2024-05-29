@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "@/components/comingSoon";
 
 const PrivacyPolicy = () => {
   return (
-    <div>privacy-policy</div>
-  )
-}
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;
