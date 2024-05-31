@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import { CodeVivaLogo, CodeVivaLogo1 } from "@/components/generic/Icons";
+import { CodeVivaLogo } from "@/components/generic/Icons";
 import useUserInfo from "@/queries/useUser";
 import { isLoggedIn } from "@/helper";
 import { allRoutes } from "@/constants/allRoutes";
