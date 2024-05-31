@@ -7,6 +7,7 @@ const COMMON__META_CONTENT = {
   keywords:
     BRAND_NAME +
     "Welcome to CodeViva! We're your partner in preparing for interviews and advancing your career. Our platform offers a wealth of resources, including objective questions, practical solutions, assignment tasks, and machine interview questions. We're here to guide you on your career path, helping you express your potential and build a better future. We also provide opportunities for freshers and internships in frontend and backend development. Join us on this journey of learning and growth!",
+  
 };
 
 const META = {
