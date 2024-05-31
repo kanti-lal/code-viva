@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ComingSoon from "@/components/comingSoon";
 import Meta from "@/components/generic/Meta";
 import META from "@/helper/meta-constant";
@@ -15,8 +14,6 @@ export default function Home() {
       />
       <div className="h-screen">
         <ComingSoon />
-
-        <Image src={CodeVivaLogo} alt="fsdf" />
       </div>
     </>
   );
