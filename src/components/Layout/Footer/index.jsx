@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <div className="py-2 px-4 text-center  font-jost bg-purple-100">
       <div>
-        <div className=" flex flex-col items-center justify-center lg:flex-row w-full ">
+        <div className=" flex items-center justify-center w-full ">
           <div className="px-2">
-            <CodeVivaSq  />
+            <CodeVivaSq size='30' />
           </div>
 
           <span className="hidden md:flex  font-normal">

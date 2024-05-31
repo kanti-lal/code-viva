@@ -10,6 +10,7 @@ import FormTitle from "@/components/generic/form/FormTitle";
 import { useAuth } from "@/context/AuthContext";
 import Button from "@/components/generic/form/Button";
 import { NEXT_PUBLIC_BASE_URL } from "@/utils/config";
+import { queryClient } from "@/utils/queryClient";
 
 const SignUp = () => {
   const { register } = useAuth();
@@ -31,7 +32,19 @@ const SignUp = () => {
     console.log("values", values);
     setSubmitting(true);
     try {
-      await register(values.email, values.password, values.name);
+      const signupRes = await register(
+        values.email,
+        values.password,
+        values.name
+      );
+      console.log("signupRes", signupRes);
+      console.log("signupRes", signupRes?.accessToken);
+      localStorage.setItem("user", JSON.stringify(signupRes?.providerData[0]));
+      localStorage.setItem(
+        "accessToken",
+        JSON.stringify(signupRes?.accessToken)
+      );
+      queryClient.refetchQueries(["user"]);
       router.push("/");
       toast.success("Signed up successfully!");
     } catch (err) {
@@ -50,7 +63,6 @@ const SignUp = () => {
   return (
     <div className="container mx-auto">
       <div className="min-h-screen flex items-center justify-center">
-
         <Meta
           title="Login"
           keyword="login, user login, codeviva"
@@ -65,10 +77,10 @@ const SignUp = () => {
             <FormTitle title="Sign Up" />
           </div>
           <div className="flex justify-end mt-3 text-center font-jost text-[16px]">
-          Already have an account?
+            Already have an account?
             <Link href="/login" className="underline text-primary ">
               {" "}
-            Login
+              Login
             </Link>
           </div>
           <Formik
@@ -84,7 +96,7 @@ const SignUp = () => {
 
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">
-                  Name
+                    Name
                   </label>
                   <Field
                     type="text"
@@ -99,7 +111,7 @@ const SignUp = () => {
 
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
-                  Email address
+                    Email address
                   </label>
                   <Field
                     type="email"
@@ -114,7 +126,7 @@ const SignUp = () => {
 
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
-                  Password
+                    Password
                   </label>
                   <Field
                     type="password"
@@ -133,7 +145,7 @@ const SignUp = () => {
                   btnLoader={isSubmitting}
                   className="bg-primary hover:bg-purple-700 h-9"
                   fullWidth
-                  title={"SignUp"}
+                  title={isSubmitting ? "" : "SignUp"}
                 />
               </Form>
             )}
@@ -145,5 +157,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-

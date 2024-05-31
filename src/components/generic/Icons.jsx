@@ -276,11 +276,11 @@ export const GoogleIcon = () => {
   );
 };
 
-export const CodeVivaSq = ({ className }) => {
+export const CodeVivaSq = ({ className , size}) => {
   return (
     <svg
-      width="50"
-      height="50"
+      width={size}
+      height={size}
       viewBox="0 0 390 225"
       fill="none"
     
